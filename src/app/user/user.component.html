@@ -1,0 +1,28 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      <h2>Item Management</h2>
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users | async">
+            <td>{{user.name}}</td>
+            <td>{{user.email}}</td>
+            <td>
+              <button (click)="deleteUser(user._id)" class="btn btn-danger">Delete</button>
+              <button (click)="updateUser(user._id)" class="btn btn-info" style="margin-left: 10px">Update</button>
+              <button (click)="viewUserCart(user._id)" class="btn btn-info" style="margin-left: 10px">View Cart</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <button (click)="createUser()" class="btn btn-success" style="width: 100%">Create User</button>
+    </div>
+  </div>  
